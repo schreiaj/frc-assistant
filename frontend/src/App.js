@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Story} from 'inkjs';
+import {Story} from 'inkjs/dist/ink';
 import data from './storyData/FRC Assistant.js.json';
 
 // Yeah, this is kinda hacky, inky exports v18 files but inkjs only deals with v17 files
@@ -12,7 +12,6 @@ data.inkVersion = 17;
 class App extends Component {
   constructor() {
     super();
-    
     this.story = new Story(data);
     this.state = {messages: []};
   
