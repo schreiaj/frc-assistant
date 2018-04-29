@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import {Story} from 'inkjs';
-import data from './storyData/FRC Assistant';
+import data from './storyData/FRC Assistant.js.json';
+
+// Yeah, this is kinda hacky, inky exports v18 files but inkjs only deals with v17 files
+// The main differences are in whitespace handling which, for html, is irrelevant... so far
+data.inkVersion = 17;
+    
 
 class App extends Component {
   constructor() {
     super();
+    
     this.story = new Story(data);
     this.state = {messages: []};
   
