@@ -36,7 +36,11 @@
 
             // Get ink to generate the next paragraph
             var paragraphText = story.Continue();
+            if(story.currentTags.length > 0){
+                debugger
+            }
 
+            
             // Create paragraph element
             var paragraphElement = document.createElement('p');
             paragraphElement.innerHTML = paragraphText;
