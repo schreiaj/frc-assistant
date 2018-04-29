@@ -8,38 +8,69 @@ class App extends Component {
   constructor() {
     super();
     this.story = new Story(data);
+    this.state = {messages: []};
   
+  }
+
+  componentDidMount(){
+    const messages = this.continueStory();
+    this.setState({messages})
+  }
+
+  continueStory = () => {
+    let messages = [];
+    let count = 0;
+    while(this.story.canContinue) {
+      
+      this.story.Continue();
+      let tags = this.story.currentTags.map( t => {return {type: 'tag', data: JSON.parse(t)}});
+      messages = [...messages, ...tags];      
+      messages.push({type: 'story', message: this.story.currentText});
+      console.log(this.story.currentText, count++);
+      
+      console.log(tags);
+      
+      
+    }
+    let choices = this.story.currentChoices.map((c,i) => { return {type: 'choice', message: c.text, choiceIndex: i }})
+    messages = messages.concat(choices);
+    return messages;
   }
 
   chooseOption = (i) => {
     return () => {
       this.story.ChooseChoiceIndex(i);
       this.story.Continue();
-      this.setState({})
+      const messages = this.continueStory();
+      
+      this.setState({messages})
     }
   }
 
   render() {
-    let content = [];
-    let tags = []
-    while(this.story.canContinue) {
-      this.story.Continue();
-      content.push(this.story.currentText)
-      tags = [...tags, ...this.story.currentTags.map( t => JSON.parse(t))];
-    }
-     
-    console.log(tags);
-    
-    
-    
+    console.log(this.state);
     
     return (
       <div className="App container">
-        {content.map((line, i) => <div className='bot-response' key={i}>{line}</div>)}
-        {this.story.currentChoices.map((choice, i) => <div className='choice' key={i} onClick={this.chooseOption(i)}>{choice.text}</div>)}
+        {this.state.messages.map((m, i) => <Message key={i} message={m}onChoiceClick={this.chooseOption}/>)}
       </div>
     );
   }
 }
 
 export default App;
+
+const Message = ({message, index, onChoiceClick}) => {
+  switch(message.type) {
+    case 'story':
+      return <div className='bot-response'>{message.message}</div>
+    case 'choice':
+      return <div className='choice' onClick={onChoiceClick(message.choiceIndex)}>{message.message}</div>
+    case 'tag':
+      return <div className='resource'><a href={message.data.link} target="_blank"><img src={message.data.thumbnail} /></a></div>
+    default:
+      return null;
+  }
+
+}
+
