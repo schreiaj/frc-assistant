@@ -1,0 +1,18 @@
+{
+    "main": {
+        "repo": {
+            "type": "resource",
+            "link": "http://github.com/schreiaj/frc-assistant",
+            "thumbnail": "https://avatars3.githubusercontent.com/u/329127?s=460&v=4",
+            "source": "Andrew Schreiber"
+        }
+    },
+    "drivetrain": {
+        "about": {
+            "type": "resource",
+            "link": "https://www.thecompassalliance.org/single-post/2017/12/07/Drive-Train-Systems",
+            "thumbnail": "https://static.wixstatic.com/media/80a609_ecbbbe92d12a4a018d86b361fa541b07~mv2.png/v1/fill/w_556,h_313,al_c,usm_0.66_1.00_0.01/80a609_ecbbbe92d12a4a018d86b361fa541b07~mv2.png",
+            "source": "Compass Alliance"
+        }
+    }
+}

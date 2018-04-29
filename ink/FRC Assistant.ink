@@ -16,7 +16,7 @@ What {~what can I help you with?| are you struggling with?}
 
 == not_implemented
 Hey, sorry, I don't know how to help you with this yet. If you want to help build this check out my source 
-    # {"type": "resource", "link":"http:\/\/github.com\/schreiaj\/frc-assistant", "thumbnail": "https:\/\/avatars3.githubusercontent.com\/u\/329127?s=460&v=4"}
+    # {"resource": "main.repo"}
 
 
 -> main_start

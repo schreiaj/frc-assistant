@@ -6,6 +6,7 @@
   "dependencies": {
     "ajv": "^6.4.0",
     "inkjs": "^1.6.0",
+    "lodash": "^4.17.10",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4"
