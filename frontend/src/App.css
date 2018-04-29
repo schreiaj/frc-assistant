@@ -17,7 +17,7 @@ h1 {
 
 .bot-response {
 	position: relative;
-	background: #0070bb;
+	background: #0084ff;
   border-radius: .8em;
   margin: 5px;
   padding: 10px;
@@ -32,7 +32,7 @@ h1 {
 	width: 0;
 	height: 0;
 	border: 8px solid transparent;
-	border-right-color: #0070bb;
+	border-right-color: #0084ff;
 	border-left: 0;
 	border-bottom: 0;
 	margin-top: -4px;
