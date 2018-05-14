@@ -7,6 +7,10 @@ import {Story} from 'inkjs/dist/ink';
 import data from './storyData/FRC Assistant.js.json';
 import resources from './storyData/resources.json';
 
+
+import { Container, Divider, Label, Grid, Header, Menu,  Segment, Table, Feed, Icon, Image } from 'semantic-ui-react'
+
+
 // Yeah, this is kinda hacky, inky exports v18 files but inkjs only deals with v17 files
 // The main differences are in whitespace handling which, for html, is irrelevant... so far
 data.inkVersion = 17;
@@ -16,13 +20,13 @@ class App extends Component {
   constructor() {
     super();
     this.story = new Story(data);
-    this.state = {messages: []};
+    this.state = {messages: [], choices: []};
   
   }
 
   componentDidMount(){
-    const messages = this.continueStory();
-    this.setState({messages})
+    const {messages, choices} = this.continueStory();
+    this.setState({messages, choices})
   }
 
   extractTag(tag){
@@ -40,24 +44,23 @@ class App extends Component {
       let tags = this.story.currentTags.map(this.extractTag);
       messages = [...messages, ...tags];      
       messages.push({type: 'story', message: this.story.currentText});
-      console.log(this.story.currentText, count++);
+      // console.log(this.story.currentText, count++);
       
-      console.log(tags);
+      // console.log(tags);
       
       
     }
     let choices = this.story.currentChoices.map((c,i) => { return {type: 'choice', message: c.text, choiceIndex: i }})
-    messages = messages.concat(choices);
-    return messages;
+    return {messages, choices};
   }
 
   chooseOption = (i) => {
     return () => {
       this.story.ChooseChoiceIndex(i);
       this.story.Continue();
-      const messages = this.continueStory();
+      const {messages, choices} = this.continueStory();
       
-      this.setState({messages})
+      this.setState({messages, choices})
     }
   }
 
@@ -65,8 +68,16 @@ class App extends Component {
     console.log(this.state);
     
     return (
-      <div className="App container">
-        {this.state.messages.map((m, i) => <Message key={i} message={m}onChoiceClick={this.chooseOption}/>)}
+      <div>
+        <Container style={{ padding: '5em 0em' }}>
+          <Header as='h2'>FRC Assistant</Header>
+          <Feed>
+            {this.state.messages.map((m, i) => <Message key={i} message={m} onChoiceClick={this.chooseOption}/>)}
+          </Feed>
+          <div className="choices">
+            {this.state.choices.map((m, i) => <Choice className="choice" key={i} message={m} onChoose={this.chooseOption}/>)}
+          </div>
+        </Container>
       </div>
     );
   }
@@ -89,28 +100,63 @@ const Message = ({message, index, onChoiceClick}) => {
 }
 
 const BotResponse = ({ message }) => {
-  return <div className='bot-response'>{message.message}</div>
+  return (
+    <Feed.Event>
+      <Feed.Label ><Icon name="help circle" /></Feed.Label>
+      <Feed.Content content={message.message} />
+    </Feed.Event>
+  )
 }
 
 const Choice = ({ message, onChoose }) => {
-  return <div className='choice' onClick={onChoose(message.choiceIndex)}>{message.message}</div>
+  return (
+    <div className="choice">
+      <Label color="teal" as='a' onClick={onChoose(message.choiceIndex)} size="large">
+        {message.message}
+      </Label>
+    </div>
+  )
 }
 
 const Tag = ({ message }) => {
   if(!message.data){
-    return <div className='error'>I'm supposed to know of a resource here at <strong>{message.path}</strong> but it didn't load correctly.</div>
+    return (
+      <Feed.Event>
+      <Feed.Label ><Icon name="help circle" /></Feed.Label>
+      <Feed.Content>
+      I'm supposed to know of a resource here at <strong>{message.path}</strong> but it didn't load correctly.
+      </Feed.Content>
+    </Feed.Event>
+    )
   }
   return (
-    <div className='resource'>
-      <div className='thumbnail'>
+
+    <Feed.Event>
+      <Feed.Label ><Icon name="help circle" /></Feed.Label>
+      <Feed.Content>
+      <Feed.Extra images> 
         <a href={message.data.link} target="_blank">
-          <img src={message.data.thumbnail} />
+          <Image src={message.data.thumbnail} size="big" />
         </a>
-      </div>
-      <div>
-        Source: {message.data.source}
-      </div>
-      
-    </div>
+      </Feed.Extra>
+      <Feed.Meta>
+          Source: {message.data.source}
+      </Feed.Meta>
+      </Feed.Content>
+    </Feed.Event>
+    
   );
 }
+
+
+// <div className='resource'>
+//       <div className='thumbnail'>
+//         <a href={message.data.link} target="_blank">
+//           <img src={message.data.thumbnail} />
+//         </a>
+//       </div>
+//       <div>
+//         Source: {message.data.source}
+//       </div>
+      
+//     </div>

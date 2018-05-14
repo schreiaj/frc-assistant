@@ -10,9 +10,23 @@ h1 {
 
 .container {
   display: block;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
+	max-width: 600px;
+}
+
+.choice {
+	margin: 1em;
+	padding: 0px !important;
+	/* 
+	I hate using !important but I'm lazy right now
+	TODO: Fix this
+	 */
+}
+
+.choices {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 1em;
+
 }
 
 .bot-response {
