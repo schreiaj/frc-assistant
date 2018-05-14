@@ -17,6 +17,7 @@ What {~what can I help you with?| are you struggling with?}
 == not_implemented
 Hey, sorry, I don't know how to help you with this yet. If you want to help build this check out my source 
     # {"resource": "main.repo"}
+If you have suggestions for this question please let me know...
 
 
 -> main_start
