@@ -14,98 +14,19 @@ h1 {
 }
 
 .choice {
-	margin: 1em;
-	padding: 0px !important;
-	/* 
-	I hate using !important but I'm lazy right now
-	TODO: Fix this
-	 */
+	margin: .4em;
+	padding: 0px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .choices {
 	display: flex;
 	flex-wrap: wrap;
 	margin: 1em;
-
 }
 
-.bot-response {
-	position: relative;
-	background: #0084ff;
-  border-radius: .8em;
-  margin: 5px;
-  padding: 10px;
-  color: white;
-}
-
-.bot-response:after {
-	content: '';
-	position: absolute;
-	left: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 8px solid transparent;
-	border-right-color: #0084ff;
-	border-left: 0;
-	border-bottom: 0;
-	margin-top: -4px;
-	margin-left: -8px;
-}
-
-.choice {
-	position: relative;
-	background: #eeeeee;
-  border-radius: .4em;
-  margin: 5px;
-  padding: 10px;
-  text-align: right
-}
-
-.choice:after {
-	content: '';
-	position: absolute;
-	right: 0;
-	top: 50%;
-	width: 0;
-	height: 0;
-	border: 8px solid transparent;
-	border-left-color: #eeeeee;
-	border-right: 0;
-	border-bottom: 0;
-	margin-top: -4px;
-	margin-right: -8px;
-}
 
 a:hover {
   color: black;
-}
-
-.resource {
-  height: 10em;
-	text-align: right;
-	background: #eeeeee;
-	padding: .4em;
-	border-radius: .4em;
-}
-
-.error {
-	background: red;
-	color: white;
-	padding: .4em;
-	border-radius: .4em;
-}
-
-.thumbnail {
-  height: 80%;
-}
-
-.resource > p {
-	margin-top: -1em;
-	font-weight: 500;
-}
-
-img {
-	height: 100%;
-	border-radius: .4em;
 }

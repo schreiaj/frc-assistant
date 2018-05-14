@@ -11,6 +11,9 @@ import resources from './storyData/resources.json';
 import { Transition, Container, Divider, Label, Grid, Header, Menu, Segment, Table, Feed, Icon, Image } from 'semantic-ui-react'
 
 
+import FlipMove from 'react-flip-move';
+
+
 // Yeah, this is kinda hacky, inky exports v18 files but inkjs only deals with v17 files
 // The main differences are in whitespace handling which, for html, is irrelevant... so far
 data.inkVersion = 17;
@@ -71,11 +74,18 @@ class App extends Component {
       <div>
         <Container style={{ padding: '5em 0em' }}>
           <Header as='h1'>FRC Assistant</Header>
-          <Feed>
-              {this.state.messages.map((m, i) => <Message key={i} message={m} onChoiceClick={this.chooseOption} />)}
-          </Feed>
+          
+            <Feed>
+            <FlipMove staggerDelayBy="100" leaveAnimation="none" typeName={null} duration="500" easing="easeOutBounce" easing="cubic-bezier(0.68, -0.55, 0.265, 1.55)">
+              {this.state.messages.map((m, i) => <Message key={Math.random()} message={m} onChoiceClick={this.chooseOption} />)}
+            </FlipMove>
+            </Feed>
+          
           <div className="choices">
-            {this.state.choices.map((m, i) => <Choice className="choice" key={i} message={m} onChoose={this.chooseOption} />)}
+            <FlipMove staggerDelayBy="100" leaveAnimation="none" typeName={null} duration="500" delay={500} easing="easeOutBounce" easing="cubic-bezier(0.68, -0.55, 0.265, 1.55)">
+
+            {this.state.choices.map((m, i) => <Message className="choice" key={Math.random()} message={m} onChoiceClick={this.chooseOption} />)}
+            </FlipMove>
           </div>
         </Container>
       </div>
@@ -85,16 +95,19 @@ class App extends Component {
 
 export default App;
 
-const Message = ({ message, index, onChoiceClick }) => {
-  switch (message.type) {
-    case 'story':
-      return <BotResponse message={message} />
-    case 'choice':
-      return <Choice message={message} onChoose={onChoiceClick} />
-    case 'tag':
-      return <Tag message={message} />
-    default:
-      return null;
+class Message extends Component {
+  render() {
+    const message = this.props.message;
+    switch (message.type) {
+      case 'story':
+        return <BotResponse message={message} />
+      case 'choice':
+        return <Choice message={message} onChoose={this.props.onChoiceClick} />
+      case 'tag':
+        return <Tag message={message} />
+      default:
+        return null;
+    }
   }
 }
 
