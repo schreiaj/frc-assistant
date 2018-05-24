@@ -2,7 +2,8 @@
 
 This is an attempt to help share that institutional knowledge that most veteran FRC teams have with other teams. It's set up as an interactive fiction for folks to walk through to help guide them to what resources will help them. 
 
-
+### Current Content Plan 
+![Content Map](FRC_Assistant.png)
 
 ## Contributing 
 
