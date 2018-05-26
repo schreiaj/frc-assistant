@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.4363a1c8.css",
   "main.css.map": "static/css/main.4363a1c8.css.map",
-  "main.js": "static/js/main.91f36e3f.js",
-  "main.js.map": "static/js/main.91f36e3f.js.map",
+  "main.js": "static/js/main.cbea43cd.js",
+  "main.js.map": "static/js/main.cbea43cd.js.map",
   "static/media/brand-icons.eot": "static/media/brand-icons.13db00b7.eot",
   "static/media/brand-icons.svg": "static/media/brand-icons.a1a749e8.svg",
   "static/media/brand-icons.ttf": "static/media/brand-icons.c5ebe0b3.ttf",
@@ -19,5 +19,6 @@
   "static/media/outline-icons.svg": "static/media/outline-icons.82f60bd0.svg",
   "static/media/outline-icons.ttf": "static/media/outline-icons.ad97afd3.ttf",
   "static/media/outline-icons.woff": "static/media/outline-icons.ef60a4f6.woff",
-  "static/media/outline-icons.woff2": "static/media/outline-icons.cd6c777f.woff2"
+  "static/media/outline-icons.woff2": "static/media/outline-icons.cd6c777f.woff2",
+  "static/media/resource.svg": "static/media/resource.af4badb8.svg"
 }
