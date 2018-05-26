@@ -14,7 +14,55 @@ Ok, great. So to start, let's talk about the kit of parts drivetrain. Are you pl
 
 
 = general_info
-I would suggest the following presentation as a good starting point to learn more about drivetrains.
-# {"resource": "drivetrain.about"}
+So, let's talk about drivetrains... they typically come in a couple styles
++ Skid Steer 
+    -> skid_steer
++ Omni Directional 
+    -> omni
++ Swerve 
+    -> swerve
++ Or some hybrid of these 
+    ->hybrid
+
+= skid_steer
+
+Cool, let's talk about skid steer drivetrains. 
+When we say skid steer we mean a drivetrain that has two sides to it and controls them independently. 
+
+When it drives you can control each side. To drive straight you would drive both sides forward at the same speed. To turn to one side you could drive the side you want to turn towards slower or even in reverse from the other one. A larger difference in speeds will result in a quicker turn. 
+
+Many teams use this style of drivetrain, it's probably the most common drivetrain in FRC in part because it is the simplest to build and code but also because the kit of parts drivetrain is one of them. 
+# {"resource": "drivetrain.kitbot"}
+
+What do you want to know more about? 
+
++ Tell me more about the kitbot? 
+-> kitbot
++ No, I want to learn more about building a custom drivetrain... 
+-> custom_skidsteer
 
 -> main_start
+
+= swerve
+ 
+ Just, don't... like, don't.
+ 
+ -> main_start
+ 
+= omni
+ ->main_start
+
+= hybrid
+ ->main_start
+
+= kitbot
+The kitbot, currently produced by AndyMark is included by default in all kits. It's designed to give teams a functional drivetrain they could assemble with just hand tools. 
+
+Unfortunately, that's all I can really help you with... 
+
++ Ok... 
+->main_start
+
+= custom_skidsteer 
+
+->not_implemented
