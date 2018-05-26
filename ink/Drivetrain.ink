@@ -58,7 +58,13 @@ What do you want to know more about?
 = kitbot
 The kitbot, currently produced by AndyMark is included by default in all kits. It's designed to give teams a functional drivetrain they could assemble with just hand tools. 
 
-Unfortunately, that's all I can really help you with... 
+The best resources for it are going to be AndyMark's AM14u3 page 
+# {"resource": "drivetrain.kitbot"}
+
+FIRST does provide a "quick build" instructional steer, for more guidance you could also contact your local Senior Mentor
+#{"resource": "drivetrain.quickbuild_official"}
+#{"resource": "general.fsm"}
+
 
 + Ok... 
 ->main_start

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 
 import logo from './logo.svg';
+import resource from './resource.svg';
 import './App.css';
 import { Story } from 'inkjs/dist/ink';
 import data from './storyData/FRC Assistant.js.json';
@@ -68,8 +69,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state);
-
     return (
       <div>
         <Container style={{ padding: '5em 0em' }}>
@@ -151,7 +150,7 @@ const Tag = ({ message }) => {
       <Feed.Content>
         <Feed.Extra images>
           <a href={message.data.link} target="_blank">
-            <Image src={message.data.thumbnail} size="big" />
+            <Image src={message.data.thumbnail||resource} size="big" />
           </a>
         </Feed.Extra>
         <Feed.Meta>

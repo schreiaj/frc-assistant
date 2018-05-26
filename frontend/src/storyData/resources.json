@@ -7,6 +7,13 @@
             "source": "Andrew Schreiber"
         }
     },
+    "general": {
+        "fsm": {
+            "type": "resource",
+            "link": "https://www.firstinspires.org/senior-mentors",
+            "source": "FIRST Inspires"
+        }
+    },
     "drivetrain": {
         "about": {
             "type": "resource",
@@ -19,6 +26,11 @@
             "link": "http://www.andymark.com/AM14U3-p/am-14u3.htm",
             "thumbnail": "http://cdn3.volusion.com/vyfsn.knvgw/v/vspfiles/photos/am-14u3-3.jpg?1452326681",
             "source": "AndyMark"
+        },
+        "quickbuild_official": {
+            "type": "resource",
+            "link": "https://firstfrc.blob.core.windows.net/frc2017/2017RobotQuickBuild.zip",
+            "source": "FIRST Inspires"
         }
     }
 }
