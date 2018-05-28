@@ -31,6 +31,12 @@
             "type": "resource",
             "link": "https://firstfrc.blob.core.windows.net/frc2017/2017RobotQuickBuild.zip",
             "source": "FIRST Inspires"
+        },
+        "design": {
+            "type": "resource",
+            "link": "https://www.youtube.com/watch?v=6lmKLTZZLBE&list=PLIY-TB1MAu-X9ZcNqt-ot6_JM2Z02zZ6L&index=16",
+            "thumbnail": "https://yt3.ggpht.com/a-/ACSszfF87Mu1og4UIoXypWdtyg1FYNHsQ3VRU8bsDA=s176-mo-c-c0xffffffff-rj-k-no",
+            "source": "RSN"
         }
     }
 }

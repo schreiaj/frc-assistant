@@ -61,8 +61,9 @@ The kitbot, currently produced by AndyMark is included by default in all kits. I
 The best resources for it are going to be AndyMark's AM14u3 page 
 # {"resource": "drivetrain.kitbot"}
 
-FIRST does provide a "quick build" instructional steer, for more guidance you could also contact your local Senior Mentor
+FIRST does provide a "quick build" instructional resource...
 #{"resource": "drivetrain.quickbuild_official"}
+...for more guidance you could also contact your local Senior Mentor.
 #{"resource": "general.fsm"}
 
 
